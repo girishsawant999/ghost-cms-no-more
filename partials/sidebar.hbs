@@ -1,0 +1,104 @@
+{{!-- filter="tag:trending" --}}
+{{#get "posts" include="tags,authors,count.posts" filter="tag:trending" limit='6' }}
+<div class="sidebar-widget mb-3 border border-light rounded">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div class="section-title-block d-flex pb-3">
+                     {{#get 'tags' filter='slug:[trending]' }}
+                        {{#foreach tags }}
+                            <h3 class="section-widget-title"> 
+                                {{name}}
+                            </h3> 
+                            <a href="{{url}}" class="text-uppercase section-title-link">
+                                {{t "See all"}}
+                                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                    d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
+                                    </path>
+                                </svg>
+                            </a>
+                        {{/foreach}}
+                    {{/get}}
+                   
+                </div>
+            </div>
+        </div>
+        {{#foreach posts }}
+            {{> "blog-style/blog-style-05-1"}}
+        {{/foreach}}
+        
+    </div>
+</div>
+{{/get}}
+<div class="sidebar-widget mb-3 border border-light rounded">
+    <div class="wrapper">
+        <ul class="nav nav-tabs" id="tab-menu">
+            <li class="nav-item">
+                <a class="active" data-bs-toggle="tab" href="#tab1">{{t "Community News"}}</a>
+            </li>
+            <li class="nav-item">
+                <a class=" " data-bs-toggle="tab" href="#tab2">{{t "Most Recent"}} </a>
+            </li>
+        </ul>
+        <div class="tab-content" id="tab-content">
+            <div class="tab-pane fade show active" id="tab1">
+                <ul class="counter-post list-inline">
+                    {{!-- filter="tag:sports" --}}
+                    {{#get "posts" filter="tag:community" include="authors,tags" limit="5" }}
+                    {{#foreach posts}}
+                    <li class="counter-post-item">
+                        <a href="{{url}}">{{title}}</a>
+                    </li>
+                    {{/foreach}}
+                    {{/get}}
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="tab2">
+                <ul class="counter-post list-inline">
+                    {{#get "posts" include="authors,tags" limit="5"}}
+                    {{#foreach posts}}
+                    <li class="counter-post-item">
+                        <a href="{{url}}">{{title}}</a>
+                    </li>
+                    {{/foreach}}
+                    {{/get}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- 
+{{#get "tags"}}
+<div class="sidebar-widget mb-3 border border-light rounded">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-block d-flex pb-3">
+                    <h3 class="section-widget-title">{{t "Tag Cloud"}}</h3>
+                    <a href="/tags" class="text-uppercase section-title-link">
+                        {{t "See all"}}
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <ul class="tag-cloud list-inline">
+            {{#foreach tags}}
+            <li class="list-inline-item"><a
+                    class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white"
+                    href="{{url}}">{{name}}</a>
+            </li>
+            {{/foreach}}
+
+        </ul>
+    </div>
+</div>
+{{/get}}
+--}}
+ 

@@ -1,0 +1,93 @@
+<div data-aos="fade-in" class="single-post-widget  border-light border-top pt-3 mt-3 ">
+    <h4>{{t "Share on"}}</h4>
+    <ul class="list-inline">
+        <li class="list-inline-item"><a class="rounded btn btn-sm btn-fc text-light" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute=" true "}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="me-1 fab fa-facebook-f"></i>{{t "Share"}}</a></li>
+
+        <li class="list-inline-item"><a class="rounded btn btn-success btn-sm btn-twi text-light"  target="_blank" href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute=" true "}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="me-1 fab fa-twitter"></i> {{t "Tweet"}}</a></li>
+
+        <li class="list-inline-item"><a class="rounded btn btn-danger btn-sm text-light" target="_blank" href="https://pinterest.com/pin/create/button/?{{url absolute="true"}}{{#if feature_image}}&media={{feature_image}}{{/if}}" onclick="window.open(this.href, 'pin-it','width=580,height=296');return false;"><i class="me-1 fab fa-pinterest"></i>{{t "Pin it"}}</a></li>
+    </ul>
+
+</div>
+
+
+{{#if tags}}
+<div data-aos="fade-in" class="single-post-widget border-light border-top pt-3 mt-3">
+    <h4>{{t "Tags"}}</h4>
+    <ul class="entry-tags-share list-inline">
+        {{#foreach tags}}
+        <li class="list-inline-item"><a
+                class="mb-1 btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white"
+                href="{{url}}">{{name}}</a></li>
+        {{/foreach}}
+
+    </ul>
+</div>
+{{/if}}
+
+<div data-aos="fade-in" class="single-post-widget border-light border-top pt-3 mt-3">
+    <ul class="entry-navigation list-inline d-block d-lg-flex justify-content-between flex">
+        {{#prev_post}}
+        <li class="col-xl-6  mb-3 mb-lg-0 ">
+            <article class="blog-style5 d-flex align-items-center box-hover rounded">
+                <a href="{{url}}" aria-label="{{title}}">
+                    <div class="post-img-wrap position-relative overflow-hidden  me-2 ms-0">
+                        <img class="post-img lazyloaded" src="{{img_url feature_image}}"
+                            data-src="{{img_url feature_image}}" alt="Post Title Here">
+                    </div>
+                </a>
+                <div class="post-content pt-md-2 pt-xl-0 pt-0">
+                    <p class="mb-1">{{t "Previous Article"}}</p>
+                    <h6 class="post-title"><a href="{{url}}">{{title}}</a>
+                    </h6>
+                </div>
+            </article>
+        </li>
+        {{/prev_post}}
+
+        {{#next_post}}
+        <li class="col-xl-6">
+            <article class="blog-style5 d-flex align-items-center box-hover rounded">
+
+                <div class="post-content pt-md-2 pt-xl-0 pt-0">
+                    <p class="mb-1 text-end">{{t "Next Article"}}</p>
+                    <h6 class="post-title text-end"><a href="{{url}}">{{title}}</a>
+                    </h6>
+
+                </div>
+                <a href="{{url}}" aria-label="{{title}}">
+                    <div class="post-img-wrap position-relative overflow-hidden me-0 ms-2">
+                        <img class="post-img lazyload" src="{{img_url feature_image}}"
+                            data-src="{{img_url feature_image}}" alt="{{title}}">
+                    </div>
+                </a>
+            </article>
+        </li>
+        {{/next_post}}
+    </ul>
+</div>
+{{#primary_author}}
+<div data-aos="fade-in" class="single-post-widget border-light border-top pt-3 mt-3">
+    <div class="entry-author-bio my-2 card border border-light box-hover px-2 py-2 bg-light">
+        <div class="card-body">
+            <div class="author-info">
+                <div class="nf-avatar">
+                    <img src="{{img_url profile_image}}" class="avata-image rounded-circle" alt="{{name}}" />
+                </div>
+                <div class="nf-name">
+                    <h6 class="text-primary mb-0"><a href="{{url}}">{{name}}</a></h6>
+                  {{#if location}}
+                    <p class="small">{{location}}</p>
+                      {{/if}}
+                </div>
+            </div>
+            {{#if bio}}
+            <p class="mb-0">{{bio}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
+{{/primary_author}}
+<div class="single-post-widget border-light border-top pt-3 mt-4">
+    {{> "comments"}}
+</div>

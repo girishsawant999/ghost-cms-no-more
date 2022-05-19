@@ -1,0 +1,17 @@
+/* ============================================== 
+  5. cta Area 
+============================================== */
+.cta-area{
+  position:relative; 
+  overflow:hidden; 
+}
+.cta-shape{
+    opacity: .25;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1; 
+}

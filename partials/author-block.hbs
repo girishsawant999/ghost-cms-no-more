@@ -1,0 +1,26 @@
+<div class="author-block">
+    <ul class="avatar list-inline mb-0">
+            {{#foreach authors}}
+            <li class="list-inline-item author-avatar">
+                <a class="small" href="{{url}}">
+                {{#if profile_image}}
+                    <img src="{{img_url profile_image}}" alt="{{name}}" data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="{{name}}">
+                {{else}}
+                    {{> "icons/avatar"}}
+                {{/if}}
+                </a>
+            </li>
+        {{/foreach}}
+        
+        <li class="list-inline-item">
+            {{#has author="count:>2"}}
+                {{#primary_author}}
+                    <a class="small" href="{{url}}">{{name}}</a>
+                {{/primary_author}}{{count}}{{t " and others"}}
+            {{else}}
+                {{authors}}
+            {{/has}}
+        </li>
+    </ul>
+</div>

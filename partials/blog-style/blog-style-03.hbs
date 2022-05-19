@@ -1,0 +1,45 @@
+<article class="blog-style3 border-0 card mb-4 position-relative {{post_class}}">
+   
+   {{^has tag="video-only"}}
+       <div class="feature-image">
+            <div class="image-frame image-hover-style-1">
+                <a href="{{url}}"> 
+                     {{#if feature_image}}
+                        <img class="lazyload w-100" srcset="{{img_url feature_image size=" s"}} 300w, {{img_url feature_image
+                        size="m" }} 600w, {{img_url feature_image size="l" }} 1000w, {{img_url feature_image size="xl" }}
+                        2000w" sizes="(max-width: 1000px) 400px, 800px" src="{{img_url feature_image size=" m"}}"
+                        alt="{{title}}" loading="lazy" />
+                        
+                    {{/if}}
+                </a>
+            </div>
+        </div>
+   {{/has}}
+    
+    <div class="card-body" {{#has tag="video-only"}} style="position: relative;" {{/has}}>
+        {{#has tag="video-only"}}
+            <div class="row">
+                <div class="col-lg-12"> 
+                    {{content}}
+                </div>
+            </div>
+        {{else}}
+            {{#primary_tag}}
+                <a href="{{url}}" class="badge bg-danger">{{name}}</a>
+            {{/primary_tag}}
+
+            <h3><a href="{{url}}">{{title}}</a></h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    {{> "author-block"}}
+                </div>
+                <div class="col-lg-6"> 
+                    <span class="date-info small  float-lg-end">
+                        <span>{{date published_at format="DD MMM YY"}}</span>
+                        <span>{{reading_time}}</span>
+                    </span>
+                </div>
+            </div>
+        {{/has}}
+    </div>
+</article>

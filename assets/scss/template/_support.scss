@@ -1,0 +1,170 @@
+
+/* ============================================== 
+  4. Support Area 
+============================================== */
+.card-pay{
+      width: 48px;  
+}
+.support-filter{
+    display: flex;
+}
+.support-filter-rows{
+    border-top: 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: $box-shadow-lg; 
+    overflow: hidden;
+    display: flex;
+}
+.support-filter-header{
+    padding:1rem 1.5rem;
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
+    background-color:$secondary; 
+    strong{
+      color:$light;
+      margin:0;
+    }
+}
+.support-filter-left{
+       flex: 1; 
+}
+.support-filter-right{
+    width: 360px;
+    margin: 0 0 0 1.5rem; 
+}
+.support-filter-item{
+      flex: 1; 
+      transition: 0.2s background-color; 
+   input[type="radio"]{
+        display:none; 
+   }
+   label{ 
+      width:100%; 
+       height: 100%;
+       min-height: 300px;
+      padding: 32px 40px 0;
+      border: 1px solid rgba(0,0,0,0.2);
+      margin:0;
+      position:relative;
+      overflow:hidden;  
+      cursor:pointer;
+       .icon{
+     width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    transition: 0.2s background-color;
+    position: relative;
+    margin-bottom:.8rem; 
+    margin-right: .5rem;
+      i{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);    
+        color:$light;
+      }
+       }
+       .price{
+        margin-bottom: 2rem;
+          strong{
+                display: inline-block;
+                position: relative;
+                z-index: 2;
+                &:after{
+                  position: absolute;
+                  content: "";
+                  height: 10px;
+                  width: 100%;
+                  position: absolute;
+                  background-color: $warning;  
+                  top: 70%;
+                  left: 0;
+                  z-index: -1;
+                  opacity: 0;
+                  transition: 0.2s opacity;  
+                }
+          }
+       }
+       &:hover{
+         background-color:$info;   
+         .icon{
+              background-color: $black;
+              border-color: $black;  
+         }
+       }
+   }
+   input:checked ~ label{
+          border:0; 
+          background-color:$black;  
+            &:after {
+              content: "";
+              position: absolute;
+              width: 350px;
+              height: 200px;
+              background: var(--ghost-accent-color);
+              border-radius: 50%;
+              bottom: 0;
+              right: 0;
+              transform: translate(60%, 60%);  
+          }  
+      .icon{
+              background-color: $warning;
+              border-color: $warning;  
+         } 
+         .price{
+            color:$light;
+             strong{
+                &:after{
+                   opacity:1;  
+                }
+             }
+       }
+       ul{
+         li{
+            color:$light;
+         }
+       }
+      } 
+
+}
+#accordion-faq{ 
+    .card{
+      border:0; 
+      .card-header{
+        border:0;
+        padding:0;  
+       button{
+        width: 100%;
+        text-align: left; 
+        text-decoration: none;
+          &:after{
+            float: right;
+                position: relative;
+                top: .1rem; 
+          }
+          &[aria-expanded="false"]{  
+              &:after{ 
+              content:'\f068'; 
+              font-family:"Font Awesome 5 Free";
+              font-weight: 900;
+            }
+          }
+           &[aria-expanded="true"]{ 
+              &:after{ 
+              content:'\f067'; 
+              font-family:"Font Awesome 5 Free";
+              font-weight: 900;
+            }
+          }
+       }
+      }
+    }
+}
+
+.accordion-flush .accordion-button {
+  color: $secondary;
+}

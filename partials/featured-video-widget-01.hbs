@@ -1,0 +1,15 @@
+{{#get "posts" filter="tag:video-only" include="authors,tags,count.posts,content"}}
+    {{#if posts}}
+        <section class="nf-featured-section pt-3 pt-lg-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        {{#foreach posts to="1"}}
+                            {{> "blog-style/video-blog-style-01"}}
+                        {{/foreach}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/if}}
+{{/get}}

@@ -1,0 +1,35 @@
+{{!< default}} 
+{{> "header"}}
+{{!-- nf content section --}}
+<section class="nf-page-content-section pb-5">
+   {{> "nf-page-title"}}
+   <div class="container pt-5">
+      <div class="row">
+         <div class="col-md-12">
+            <div id="accordion-faq">
+               {{#get "posts" filter="tag:hash-faq" }}
+                  {{#if posts}}
+                     <div class="accordion pb-4 accordion-flush" id="accordionFlushExample">
+                        {{#foreach posts}}
+                           <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-heading-{{@number}}">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse-{{@number}}" aria-expanded="false" aria-controls="flush-collapse-{{@number}}">{{title}}</button>
+                              </h2>
+                              <div id="flush-collapse-{{@number}}" class="accordion-collapse collapse" aria-labelledby="flush-heading-{{@number}}"
+                                 data-bs-parent="#accordionFlushExample">
+                                 <div class="accordion-body">{{content}}</div>
+                              </div>
+                           </div>
+                        {{/foreach}}
+                     </div>
+                  {{/if}}
+               {{/get}}
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+{{> "cta-section"}}
+{{> "footer"}}

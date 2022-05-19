@@ -1,0 +1,47 @@
+{{!< default}} <!--/// Blog Area /// -->
+{{> "headers/header-center"}}
+{{#post}}
+{{!-- nf content section --}}
+<section class="nf-page-content-section pt-3 pb-5">
+        <div class="container">
+            <div class="row">
+                {{#if feature_image }}
+                     <div class="col-md-10 mx-auto">
+                        <div class="featured-image pb-3">
+                            <div class="image-frame ">
+                                <a href="{{url}}">                                 
+
+                                          <figure>
+                        <img class="w-100 rounded" srcset="{{img_url feature_image size=" s"}} 300w, {{img_url feature_image
+                              size="m" }} 600w, {{img_url feature_image size="l" }} 1000w, {{img_url feature_image
+                              size="xl" }} 2000w" sizes="(max-width: 1000px) 400px, 700px"
+                              src="{{img_url feature_image size=" m"}}" alt="{{#if feature_image_alt}}
+                               {{feature_image_alt}}
+                              {{else}}
+                              {{title}}                             
+                              {{/if}}
+                              " />
+                       </figure>
+                       {{#if feature_image_caption}}
+                        <figcaption class="small"> {{feature_image_caption}}</figcaption>                                                        
+                     {{/if}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {{/if}}
+               
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    {{> "post-content-header"}}
+                    <div class="entry-content entry-fullwidth  pb-3">
+                        {{content}}
+                    </div>
+                    {{> "post-content-footer"}}
+                </div>
+
+            </div>
+        </div>             
+</section>
+{{/post}}
+{{> "cta-section"}}
+{{> "footer"}}

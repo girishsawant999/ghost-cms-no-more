@@ -1,0 +1,56 @@
+{{!< default}} 
+
+{{> "headers/header-logo-center"}}
+{{> "featured-widget-03"}}
+{{> "nf-home-ads"}}
+
+{{!-- nf widget section --}}
+<section class="nf-widget-section py-5 ">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 col-md-7">
+            {{> "nf-widget-01"}}
+         </div>
+         <div class="col-lg-4 col-md-5">
+            {{> "sidebar"}}
+         </div>
+      </div>
+   </div>
+</section>
+
+{{!-- filter="tag:editors-pick" --}}
+{{#get "posts" include="tags,authors,count.posts" filter="tag:editors-pick"}}
+{{#if posts}}
+<section class="nf-editors-pick-section bg-light pt-5 pb-3">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="section-title-block d-flex pb-3">
+               <h3 class="section-widget-title">{{t "Editors Pick"}}</h3>
+               <a href="/tag/editor-pick" class="text-uppercase section-title-link">
+                  {{t "See all"}}
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
+                     </path>
+                  </svg>
+               </a>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         {{#foreach posts limit="2"}}
+         <div class="col-lg-6 col-md-6">
+            {{> "blog-style/blog-style-03"}}
+         </div>
+         {{/foreach}}
+
+      </div>
+   </div>
+</section>
+{{/if}}
+{{/get}}
+
+{{> "nf-home-common-section"}}
+{{> "cta-section"}}
+{{> "footer"}}

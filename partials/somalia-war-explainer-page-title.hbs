@@ -1,0 +1,14 @@
+<div class="nf-page-title-area py-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{#post}}
+                    <h1>{{title}}</h1>
+                {{/post}}
+                {{#get "posts" include="authors,tags,count.posts" filter="tag:somalia-war-explainer" limit="all"}}
+                <p>{{t "Total Posts"}} : {{posts.length}} </p>
+                {{/get}}
+            </div>
+        </div>
+    </div>
+</div>

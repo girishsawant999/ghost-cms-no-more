@@ -1,0 +1,157 @@
+{{!-- filter="tag:editors-pick" --}}
+{{#get "posts" include="tags,authors,count.posts" filter="tag:editors-pick"}}
+{{#if posts}}
+<section class="nf-editors-pick-section border bg-light border-light pt-5 pb-3">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="section-title-block d-flex pb-3">
+               <h3 class="section-widget-title">{{t "Editors Pick"}}</h3>
+               <a href="/tag/editors-pick" class="text-uppercase section-title-link">
+                  {{t "See all"}}
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
+                     </path>
+                  </svg>
+               </a>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         {{#foreach posts limit="2"}}
+         <div class="col-lg-6 col-md-6">
+            {{> "blog-style/blog-style-03"}}
+         </div>
+         {{/foreach}}
+
+      </div>
+   </div>
+</section>
+{{/if}}
+{{/get}}
+
+<!--/// Blog Area /// -->
+<section class="nf-bottom-widget-section py-5">
+   <div class="container">
+      <div class="row">
+         {{!-- filter="tag:ethiopia" --}}
+         {{#get "posts" include="tags,authors,count.posts" filter="tag:ethiopia"}}
+         {{#if posts}}
+         <div class="col-md-6 col-lg-4 pb-3 nf-tag-1">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="section-title-block d-flex pb-3">
+                        <h3 class="section-widget-title">{{t "Ethiopia"}}</h3> 
+                  </div>
+               </div>
+            </div>
+            {{> "nf-widget-02"}}
+            <div class="row">
+               <div class="col mt-3">
+                     <a href="/tag/ethiopia" class="text-uppercase section-title-link">
+                        {{t "View all posts"}} ({{posts.length}})
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                                 d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
+                           </path>
+                        </svg>
+                     </a>
+               </div>
+            </div>
+         </div>
+         {{/if}}
+         {{/get}}
+
+         {{!-- filter="tag:eritrea" --}}
+         {{#get "posts" eritrea="tags,authors,count.posts" filter="tag:eritrea" }}
+         {{#if posts}}
+         <div class="col-md-6 col-lg-4 pb-3 nf-tag-2">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="section-title-block d-flex pb-3">
+                        <h3 class="section-widget-title">{{t "Eritrea"}}</h3> 
+                  </div>
+               </div>
+            </div>
+            {{> "nf-widget-02"}}
+            <div class="row">
+               <div class="col mt-3">
+                     <a href="/tag/eritrea" class="text-uppercase section-title-link">
+                        {{t "View all posts"}} ({{posts.length}})
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                                 d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
+                           </path>
+                        </svg>
+                     </a>
+               </div>
+            </div>
+         </div>
+         {{/if}}
+         {{/get}}
+
+         {{!-- filter="tag:somalia" --}}
+         {{#get "posts" include="tags,authors,count.posts" filter="tag:somalia"}}
+         {{#if posts}}
+         <div class="col-md-6 col-lg-4 pb-3 nf-tag-3">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="section-title-block d-flex pb-3">
+                        <h3 class="section-widget-title">{{t "Somalia"}}</h3> 
+                  </div>
+               </div>
+            </div>
+            {{> "nf-widget-02"}}
+            <div class="row">
+               <div class="col mt-3">
+                     <a href="/tag/somalia" class="text-uppercase section-title-link">
+                        {{t "View all posts"}} ({{posts.length}})
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                                 d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
+                           </path>
+                        </svg>
+                     </a>
+               </div>
+            </div>
+         </div>
+         {{/if}}
+         {{/get}}
+      </div>
+
+      {{!-- filter="tag:africa" --}}
+      {{#get "posts" include="tags,authors,count.posts" filter="tag:africa" limit="4"}}
+      {{#if posts}}
+      <div class="row pt-2">
+         <div class="col-md-12">
+            <div class="section-title-block d-flex pb-3">
+               {{#get 'tags' filter='slug:[africa]'}}
+               <h3 class="section-widget-title">
+                  {{#foreach tags}}
+                  {{name}}
+                  {{/foreach}}
+               </h3>
+               {{/get}}
+               
+               <a href="/tag/africa" class="text-uppercase section-title-link">
+                  {{t "See all"}}
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
+                     </path>
+                  </svg>
+               </a>
+            </div>
+         </div>
+         {{#foreach posts }}
+         <div class="col-md-6">
+            {{> "blog-style/blog-style-02-1"}}
+         </div>
+         {{/foreach}}
+      </div>
+      {{/if}}
+      {{/get}}
+
+   </div>
+</section>

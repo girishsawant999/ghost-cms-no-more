@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{> "header"}}
+{{!-- nf content section --}}
+<section class="nf-page-content-section pb-5">
+    {{> "nf-page-title"}}
+
+    <div class="container pt-4">
+      <div class="row">
+        <div class="col-md-12">
+          {{#post}}
+            <div class="entry-content entry-fullwidth my-1">
+                {{content}}
+            </div>
+          {{/post}}
+        </div>
+      </div>
+    </div>
+</section>
+
+{{> "cta-section"}}
+  
+{{> "footer"}}

@@ -1,0 +1,29 @@
+{{!< default}}
+{{> "header"}}
+
+{{!-- nf blog section --}}
+<section class="nf-blog-section pb-5">
+    {{> "ethio-war-explainer-page-title"}}
+        {{#get "posts" include="tags,authors,count.posts" filter="tag:ethiopia-war-explainer" limit="all"}}
+        <div class="container pt-5">
+            <div class="row">
+                {{#foreach posts}}
+                    <div class="col-md-6 col-lg-6 nf-post-item">
+                        {{> "blog-style/blog-style-02-1"}}
+                    </div>
+                {{/foreach}}
+            </div>
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <button class="btn btn-light mb-2 w-100 loadmore-2">
+                        {{t "Load More"}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    {{/get}}
+</section>
+
+{{> "cta-section"}}
+{{> "footer"}}
+

@@ -1,0 +1,16 @@
+{{#get "posts" filter="featured:true" include="authors,tags,count.posts"}}
+    {{#if posts}}
+        <!--/// Blog Area /// -->
+        <section class="nf-featured-section pt-3 pb-3  pt-lg-3 pb-lg-3">
+            <div class="container">
+                <div class="row">
+                    {{#foreach posts limit="2"}}
+                        <div class="col-lg-6 col-md-12">
+                            {{> "blog-style/blog-style-03"}}
+                        </div>
+                    {{/foreach}}
+                </div>
+            </div>
+        </section>
+    {{/if}}
+{{/get}}

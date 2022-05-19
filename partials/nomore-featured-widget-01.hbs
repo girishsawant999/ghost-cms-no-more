@@ -1,0 +1,48 @@
+{{#get "posts" filter="featured:true" include="authors,tags,count.posts" limit="1"}}
+    {{#if posts}}
+        <section class="nf-featured-section pt-3 pt-lg-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        {{#foreach posts to="1"}}
+                            {{> "blog-style/blog-style-03"}}
+                        {{/foreach}}
+                    </div>
+                </div>
+                {{!-- <div class="row">
+                    <div class="col-md-6 col-lg-12">
+                        {{#foreach posts from="2" to="2"}}
+                            {{> "blog-style/nomore-blog-style-03"}}
+                        {{/foreach}}
+                    </div>
+                </div>
+                <div class="row">
+                    {{#foreach posts from="3" to="4"}}
+                    <div class="col-md-6 col-lg-6">
+                        {{> "blog-style/blog-style-03"}}
+                    </div>
+                    {{/foreach}}
+                </div> --}}
+                {{!-- 
+                <div class="row">
+                    <div class="col-lg-6 col-md-3 pt-md-0 pt-3">
+                        <nav class="blog-post-list">
+                            <ul class="list-group">
+                                 {{#foreach posts from="3" to="6"}}
+                                    <li class="list-group-item">
+                                        <article class="list-blog">
+                                            <h6 class="mb-1"><a href="{{url}}">{{title}}</a>
+                                            </h6>
+                                            <time datetime="2021-02-14 20:00" class="small">{{date published_at timeago="true"}}</time>
+                                        </article>
+                                    </li>
+                                {{/foreach}}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                --}}
+            </div>
+        </section>
+    {{/if}}
+{{/get}}

@@ -1,0 +1,145 @@
+/* ============================================== 
+  1. Media Query : 1200px
+============================================== */
+@media only screen and (max-width:1199px) {
+ 
+	.subscription-from {
+		.input-group {
+			display: block;
+			
+			input{
+				width: 100%;
+				border-radius: $border-radius!important;
+				margin-bottom: 15px;
+			}
+			button {
+				width: 100%;
+			}
+		}
+	}
+
+ 
+}
+
+
+
+
+ 
+
+
+
+
+/* ============================================== 
+  1. Media Query : 991px
+============================================== */
+@media only screen and (max-width: 991px ) {
+
+.header-navbar-bottom {
+	.modal { 
+	.modal-dialog {
+    margin-top:30%;
+}
+
+}
+
+}
+.blog-style2{
+	display:block;
+	.feature-image{
+		width:100%;
+		margin-right:0;
+	}
+	.card-body{
+		width:100%; 
+		 
+	} 
+}
+
+.sidebar-widget{
+	.social-share {
+		li {
+		    width: 100%;
+		}
+	}
+}
+  
+.support-filter{
+	display: block;
+}
+.support-filter-left{
+   margin-bottom:1rem;
+}
+.support-filter-right {
+    margin: 0 0 0 0;
+    width: 100%;
+}
+
+
+
+
+.subscription-from {
+	.input-group {
+		display: block;
+		
+		input{
+			width: 100%;
+			border-radius: $border-radius!important;
+			margin-bottom: 15px;
+		}
+		button {
+			width: 100%;
+		}
+	}
+}
+
+
+
+
+}
+
+
+
+
+
+/* ============================================== 
+  1. Media Query : 767px
+============================================== */
+@media only screen and (max-width: 767px) {
+
+.sidebar-widget .nav-tabs{
+	li{
+		a{
+	     font-size:.8rem;
+       }
+	}
+}
+.header-navbar-top{
+	display:none;
+}
+
+
+
+}
+
+
+
+
+/* ============================================== 
+  1. Media Query : 575px
+============================================== */
+@media only screen and (max-width: 575px) {
+
+.newsticker-social{
+	display:none;
+}
+.author-name {
+    display: flex;
+    
+}
+.date-info{
+		display: block;
+		float: none !important;
+		margin-top: 1rem;  
+	} 
+
+}

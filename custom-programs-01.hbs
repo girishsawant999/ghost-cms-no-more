@@ -1,0 +1,37 @@
+{{!< default}}
+{{> "header"}}
+
+{{!-- nf blog section --}}
+<section class="nf-blog-section pb-5"> 
+    {{> "programs-page-title"}}
+
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-8">
+                {{#get "posts" include="tags,authors,count.posts" filter="tag:program" limit="all"}}
+                    <div class="row">
+                        {{#foreach posts}}
+                            <div class="col-md-12 nf-post-item">
+                                {{> "blog-style/blog-style-02"}}
+                            </div>
+                        {{/foreach}}
+                    </div>
+                {{/get}}
+
+                <div class="row">
+                    <div class="col-md-5 mx-auto">
+                        <button class="btn btn-light mb-2 w-100 loadmore-1">
+                             {{t "Load More"}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                {{> "sidebar"}}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{> "cta-section"}}
+{{> "footer"}}

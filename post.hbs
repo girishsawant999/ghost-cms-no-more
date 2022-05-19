@@ -1,0 +1,51 @@
+{{!< default}} <!--======================Banner Area=============================-->
+{{> "header"}}
+{{#post}}
+   <!--/// Blog Area /// -->
+   <div class="blog-area pt-3 pb-5">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-7 col-lg-8">
+               {{> "post-content-header"}}
+               {{#if feature_image }}
+                  <div class="featured-image pb-3">
+                     <div class="image-frame  ">
+                       <figure>
+<img class="w-100 rounded" srcset="{{img_url feature_image size=" s"}} 300w, {{img_url feature_image
+                              size="m" }} 600w, {{img_url feature_image size="l" }} 1000w, {{img_url feature_image
+                              size="xl" }} 2000w" sizes="(max-width: 1000px) 400px, 700px"
+                              src="{{img_url feature_image size=" m"}}" alt="{{#if feature_image_alt}}
+                               {{feature_image_alt}}
+                              {{else}}
+                              {{title}}                             
+                              {{/if}}
+                              " />
+
+                       </figure>
+
+                       {{#if feature_image_caption}}
+                        <figcaption class="small"> {{feature_image_caption}}</figcaption>                                                        
+                     {{/if}}
+                      
+                           
+
+                      
+                     </div>
+                  </div>
+               {{/if}}
+
+               <div class="entry-content pb-3 sidebar-right">
+                  {{content}}
+               </div>
+
+               {{> "post-content-footer"}}
+            </div>
+            <div class="col-lg-4 col-md-5 pt-4 pt-md-0">
+               {{> "sidebar"}}
+            </div>
+         </div>
+      </div>
+   </div>
+{{/post}}
+{{> "cta-section"}}
+{{> "footer"}}

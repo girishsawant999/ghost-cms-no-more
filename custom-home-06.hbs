@@ -1,0 +1,147 @@
+{{!< default}}
+<!--/// Blog Area /// -->
+
+{{> "headers/header-fullwidth"}}
+
+{{> "featured-widget-04"}}
+
+{{> "nf-home-ads"}}
+
+<section class="nf-home-06-section py-5 ">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="order-2 order-md-1 col-xl-3 col-lg-3 col-md-4">
+            {{> "left-sidebar"}}
+         </div>
+         <div class="order-1 order-md-2 col-xl-6 col-lg-6 col-md-4">
+            {{#get "posts"  limit="all" include="authors,tags,count.posts" filter="tag:-hash-faq"}}
+            {{#if "posts"}}
+            <div class="row">
+               {{#foreach posts }}
+               <div class="col-md-12 nf-post-item">
+                  {{> "blog-style/blog-style-02"}}
+               </div>
+               {{/foreach}}
+            </div>
+
+            <div class="row">
+               <div class="col mt-1">
+                  <button class="btn btn-light mb-2 w-100 loadmore-h6">
+                     {{t "Load More"}}
+                  </button>
+               </div>
+            </div>
+            {{/if}}
+            {{/get}}
+         </div>
+         <div class="order-3 order-md-3 col-xl-3 col-lg-3 col-md-4">
+            {{> "sidebar"}}
+         </div>
+      </div>
+   </div>
+</section>
+
+{{!-- filter="tag:editors-pick" --}}
+{{#get "posts" include="tags,authors,count.posts" filter="tag:editors-pick"}}
+{{#if posts}}
+<section class="nf-editors-pick-section bg-light pt-5 pb-3">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="section-title-block d-flex pb-3">
+               <h3 class="section-widget-title">{{t "Editors Pick"}}</h3>
+               <a href="/tag/editors-pick" class="text-uppercase section-title-link">
+                  {{t "See all"}}
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
+                     </path>
+                  </svg>
+               </a>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         {{#foreach posts limit="2"}}
+         <div class="col-lg-6 col-md-6">
+            {{> "blog-style/blog-style-03"}}
+         </div>
+         {{/foreach}}
+
+      </div>
+   </div>
+</section>
+{{/if}}
+{{/get}}
+
+{{!-- nf bottom widget <section></section> --}}
+<section class="nf-bottom-widget-section py-5">
+   <div class="container-fluid">
+      <div class="row">
+         {{!-- filter="tag:nature" --}}
+         {{#get "posts" include="tags,authors,count.posts" filter="tag:nature"}}
+         {{#if posts}}
+         <div class="col-md-6 col-lg-4 pb-3 nf-tag-1">
+            {{> "nf-widget-02"}}
+         </div>
+         {{/if}}
+         {{/get}}
+
+         {{!-- filter="tag:recipe" --}}
+         {{#get "posts" include="tags,authors,count.posts" filter="tag:recipe" }}
+         {{#if posts}}
+         <div class="col-md-6 col-lg-4 pb-3 nf-tag-2">
+            {{> "nf-widget-02"}}
+         </div>
+         {{/if}}
+         {{/get}}
+
+         {{!-- filter="tag:national" --}}
+         {{#get "posts" include="tags,authors,count.posts" filter="tag:national"}}
+         {{#if posts}}
+         <div class="col-md-6 col-lg-4 pb-3 nf-tag-3">
+            {{> "nf-widget-02"}}
+         </div>
+         {{/if}}
+         {{/get}}
+      </div>
+
+      {{!-- filter="tag:fashion" --}}
+      {{#get "posts" include="tags,authors,count.posts" filter="tag:fashion" limit="4"}}
+      {{#if posts}}
+      <div class="row pt-2">
+         <div class="col-md-12">
+            <div class="section-title-block d-flex pb-3">
+               {{#get 'tags' filter='slug:[fashion]'}}
+               <h3 class="section-widget-title">
+                  {{#foreach tags}}
+                  {{name}}
+                  {{/foreach}}
+               </h3>
+               {{/get}}
+
+               <h3 class="section-widget-title">{{tag}}</h3>
+               <a href="/tag/fashion" class="text-uppercase section-title-link">
+                  {{t "See all"}}
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
+                     </path>
+                  </svg>
+               </a>
+            </div>
+         </div>
+         {{#foreach posts }}
+         <div class="col-md-6">
+            {{> "blog-style/blog-style-02-1"}}
+         </div>
+         {{/foreach}}
+      </div>
+      {{/if}}
+      {{/get}}
+
+   </div>
+</section>
+{{> "cta-section"}}
+
+{{> "footer-fullwidth"}}

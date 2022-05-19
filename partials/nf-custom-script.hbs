@@ -1,0 +1,37 @@
+
+<script>
+  const postsPerPage = {{@config.posts_per_page}};
+  (function ($) {
+    "use strict";
+
+    const value = [2,1,2,3];
+    for(let x = 2, i = -1; x <= $('.h4-post').length; x = x + value[i+1], i++){
+        $(`.h4-post:nth-child(${x})`).addClass("h4-post-hidden");
+        if(i == 3){
+          i = -1;
+        }
+    }
+    $(".h4-post-hidden").remove();
+   
+    for(let x = 4; x <= $('.h5-post').length; x = x + 5){
+        $(`.h5-post:nth-child(${x})`).removeClass("col-xl-4");
+        $(`.h5-post:nth-child(${x+1})`).removeClass("col-xl-4");
+        console.log(x, x+1);
+    }
+   
+    
+
+    $(document).ready(function(){
+        $(".nf-post-item").slice(0, {{@config.posts_per_page}}).show();
+        $(".loadmore-1, .loadmore-2, .loadmore-3, .loadmore-4, .loadmore-5, .loadmore-h4,.loadmore-h5, .loadmore-h6").on("click", function(e){
+          e.preventDefault();
+          $(".nf-post-item:hidden").slice(0, {{@config.posts_per_page}}).slideDown();
+          if($(".nf-post-item:hidden").length == 0) {
+            $(".loadmore-1, .loadmore-2, .loadmore-3, .loadmore-4, .loadmore-5,.loadmore-h4,.loadmore-h5, .loadmore-h6").text("No More Posts").addClass("noContent");
+          }
+        });
+        
+      });
+
+}(jQuery));
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{!-- Title --}}
+    <title>{{meta_title}}</title>
+
+
+    {{!-- Favicon --}}
+    <link rel="shortcut icon" type="image/ico" href="{{asset "images/favicon.png"}}">
+
+    {{!-- Google Font --}}
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Bitter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+
+
+    {{!-- gulp:css --}}
+    <link rel="stylesheet" href="{{asset "css/app.min.css"}}">
+    {{!-- endgulp --}}
+
+ 
+
+    <script>
+         var pagination_next_page_number       = '{{ pagination.next }}',
+             pagination_available_pages_number = '{{ pagination.pages }}';
+             if(typeof site_content_key === "undefined"){
+             var site_content_key = '240824bb72c8bf1767314d0e46';
+          }
+          if(typeof site_url === "undefined"){
+              var site_url = '{{@site.url}}';
+          }
+          var ghost_root_url = "/ghost/api/v4";
+      </script>
+
+    {{ghost_head}}
+
+</head>
+
+<body class="{{body_class}} body-shape">
+
+        {{{body}}}
+
+   <!-- gulp:js -->
+   <script src="{{asset "js/build.min.js"}}"></script>
+   <!-- endgulp --> 
+
+    {{> "nf-custom-script"}}
+
+        <script>
+            $("span.nf-toggle-iocn").on("click", function(){
+                $(this).parent().toggleClass("nf-toggle-dropdown");
+                     });
+      </script>
+    
+    {{ghost_foot}}
+</body>
+
+</html>

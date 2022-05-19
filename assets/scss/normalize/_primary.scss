@@ -1,0 +1,390 @@
+
+/* ============================================== 
+  1. Normalize CSS 
+============================================== */
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+a{
+  &:hover{
+    color: var(--ghost-accent-color);
+  }
+}
+.container-fluid {
+  max-width: 1700px;
+}
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); 
+    border-radius: .3rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--ghost-accent-color); 
+    border-radius: .1rem;
+    color:$light; 
+}
+ 
+.badge, .badge:hover {
+  color: $white!important;
+}
+.z-index-10 {
+  z-index: 10;
+}
+.nf-ads-box {
+  img {
+    max-width: 100%;
+  }
+}
+.bg-primary-light {
+  background-color: $gray;
+}
+ 
+.btn-link.focus, .btn-link:focus, 
+.btn-link:hover{
+  text-decoration:none;
+}
+.btn-twi{
+  background-color:#55acee; 
+  border-color:#55acee;
+}
+.btn-fc{
+  background-color:#1877f2; 
+  border-color:#1877f2;  
+}
+.btn-rss{
+  background-color:#EA6221; 
+  border-color:#EA6221;  
+}
+.btn-ins{
+  background-color:#96255E; 
+  border-color:#96255E;  
+}
+.btn-lk{
+  background-color:#1A5957; 
+  border-color:#1A5957;  
+}
+ 
+a {
+    transition: all .15s linear;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+}
+iframe{
+  border:0;
+  outline:none;
+}
+b,
+strong {
+    font-weight: bolder !important;
+}
+dl, ol, ul{
+  padding-left:1.5rem; 
+}
+.page-link:focus {
+    box-shadow: none;
+}
+
+.input-group-btn:not(:first-child)>.btn-group,
+.input-group-btn:not(:first-child)>.btn {
+
+    &:focus,
+    &:active,
+    &:hover {
+        z-index: 1;
+    }
+}
+.form-control {
+    border-width: .1rem;
+    height: auto;
+ 
+ 
+    transition: all .15s linear; 
+    &:focus,
+    &:active,
+    &:hover {
+     
+      
+    }
+}
+.input-group .form-control {
+
+    &:focus,
+    &:active,
+    &:hover {
+        z-index: 2;
+    }
+}
+.dropdown-menu {  
+    outline:none; 
+    .show{ 
+       > .dropdown-item{
+         background-color:$primary;
+          color:$light;  
+       }
+    }
+    .dropdown-item {
+        transition: all .15s linear;
+        &:hover{
+          background-color:$primary;
+          color:$light; 
+        }
+    }
+}
+.list-group-item {
+    border-style: dotted;
+    border-left: 0;
+    border-right: 0;
+
+    &:first-child {
+        border-top: 0;
+    }
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+.breadcrumb{
+  background-color:transparent;
+}
+.preloader {
+     position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999999;
+      background-color:$light;  
+}
+.lds-roller  {
+display: inline-block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  div{
+      animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+         transform-origin: 40px 40px;
+     &::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--ghost-accent-color);
+  margin: -4px 0 0 -4px;
+}
+&:nth-child(1) {
+  animation-delay: -0.036s;
+}
+&:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+&:nth-child(2) {
+  animation-delay: -0.072s;
+}
+&:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+&:nth-child(3) {
+  animation-delay: -0.108s;
+}
+&:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+&:nth-child(4) {
+  animation-delay: -0.144s;
+}
+&:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+&:nth-child(5) {
+  animation-delay: -0.18s;
+}
+&:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+&:nth-child(6) {
+  animation-delay: -0.216s;
+}
+&:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+&:nth-child(7) {
+  animation-delay: -0.252s;
+}
+&:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+&:nth-child(8) {
+  animation-delay: -0.288s;
+}
+&:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+  }
+
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.image-hover-style-1 {
+  overflow: hidden;
+  border-radius: $border-radius;
+  img {
+    transform: scale(1);
+    transition: all .3s ease-in-out;
+   
+    &:hover {
+      transform: scale(1.03);
+    
+    }
+  }
+
+
+
+}
+ 
+ 
+blockquote {
+  background: $light;
+  border-left: 5px solid $primary;
+  margin: 1.5em 10px;
+  padding: 1em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  &:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  p{ display: inline;}
+}
+ .bg-hover-danger {
+   &:hover {
+     background-color: var(--ghost-accent-color)!important;
+     border-color: var(--ghost-accent-color)!important;
+   }
+ }
+ .bg-hover-primary {
+  &:hover {
+    background-color: $primary!important;
+    border-color: $primary!important;
+  }
+}
+.bg-hover-secondary {
+  &:hover {
+    background-color: $secondary!important;
+    border-color: $secondary!important;
+  }
+}
+.bg-hover-light {
+  &:hover {
+    background-color: $light!important;
+    border-color: $light!important;
+  }
+}
+.bg-hover-info {
+  &:hover {
+    background-color: $info!important;
+    border-color: $info!important;
+  }
+}
+.bg-hover-success {
+  &:hover {
+    background-color: $success!important;
+    border-color: $success!important;
+  }
+}
+.bg-hover-white {
+  &:hover {
+    background-color: $white!important;
+    border-color: $white!important;
+  }
+}
+
+.text-hover-danger {
+  &:hover {
+   color: var(--ghost-accent-color)!important;
+  }
+}
+.text-hover-primary {
+ &:hover {
+  color: $primary!important;
+ }
+}
+.text-hover-secondary {
+ &:hover {
+  color: $secondary!important;
+ }
+}
+.text-hover-light {
+ &:hover {
+  color: $light!important;
+ }
+}
+.text-hover-info {
+ &:hover {
+  color: $info!important;
+ }
+}
+.text-hover-success {
+ &:hover {
+  color: $success!important;
+ }
+}
+.text-hover-white {
+ &:hover {
+  color: $white!important;
+ }
+}
+
+.box-hover{
+  transition: $transition-base;
+  &:hover{ 
+    box-shadow:$box-shadow-lg;
+ }
+}
+.btn-circle {
+  border-radius: 100px;
+  min-width: 180px;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  color: var(--ghost-accent-color);
+  background-color:var(--bs-white)
+}

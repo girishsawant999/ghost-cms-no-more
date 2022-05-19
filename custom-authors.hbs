@@ -1,0 +1,64 @@
+{{!< default}}
+{{> "header"}}
+{{!-- nf authors section --}}
+<section class="nf-authors-section pb-5">
+   {{> "nf-page-title"}}
+
+    <div class="container pt-5">
+        <div class="row">
+            {{#get "authors"}}
+                {{#if authors}}
+                    {{#foreach authors}}
+                        <div class="col-md-6 col-lg-6  mb-3">
+                            <div class="border border-light box-hover p-3">
+                                <div class="author-name-full m-0">
+                                    {{#if profile_image}}
+                                        <img class="avata-big rounded-circle" src="{{img_url profile_image}}" alt="{{name}}" />
+                                    {{/if}}
+
+                                    <div class="author-bio-content">
+                                        <h4 class="mb-0"><a href="{{url}}">{{name}}</a></h4>
+                                        <p class="small mb-1">{{location}}</p>
+                                        <ul class="list-inline mb-3">
+                                            {{#if facebook}}
+                                            <li class="list-inline-item">
+                                                <a class="social-icon" href="{{facebook}}">
+                                                    <i class="me-1 fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            {{/if}}
+                                            {{#if twitter}}
+                                            <li class="list-inline-item">
+                                                <a class="social-icon" href="{{twitter}}">
+                                                    <i class="me-1 fab fa-twitter"> </i>
+                                                </a>
+                                            </li>
+                                            {{/if}}
+                                            {{#if website}}
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon" href="{{website}}">
+                                                        <i class="me-1 fas fa-globe">
+                                                        </i>
+                                                    </a>
+                                                </li>
+                                            {{/if}}
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {{#if bio}}
+                                    <p class="bio border-top border-light pt-2 ">{{bio}} </p>
+                                {{/if}}
+
+                            </div>
+                        </div>
+                    {{/foreach}}
+                {{/if}}
+            {{/get}}
+        </div>
+
+    </div>
+</section>
+
+{{> "cta-section"}}
+{{> "footer"}}

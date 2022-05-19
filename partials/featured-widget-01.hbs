@@ -1,0 +1,35 @@
+{{#get "posts" filter="featured:true" include="authors,tags,count.posts"}}
+    {{#if posts}}
+        <section class="nf-featured-section pt-3 pt-lg-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        {{#foreach posts to="1"}}
+                            {{> "blog-style/blog-style-03"}}
+                        {{/foreach}}
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        {{#foreach posts from="2" to="3"}}
+                            {{> "blog-style/blog-style-04"}}
+                        {{/foreach}}
+                    </div>
+                    <div class="col-lg-3 col-md-6 pt-md-0 pt-3">
+                        <nav class="blog-post-list">
+                            <ul class="list-group">
+                                 {{#foreach posts from="4" to="8"}}
+                                    <li class="list-group-item">
+                                        <article class="list-blog">
+                                            <h6 class="mb-1"><a href="{{url}}">{{title}}</a>
+                                            </h6>
+                                            <time datetime="2021-02-14 20:00" class="small">{{date published_at timeago="true"}}</time>
+                                        </article>
+                                    </li>
+                                {{/foreach}}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/if}}
+{{/get}}

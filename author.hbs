@@ -1,0 +1,69 @@
+{{!< default}} <!--/// Blog Area /// -->
+{{> "header"}}
+<div class="blog-area pb-5">
+    {{#author}}
+        <div class="nf-page-title-area py-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="author-name-full mb-2">
+                            {{#if profile_image}}
+                            <img class="avata-big rounded-circle" src="{{img_url profile_image}}" alt="{{name}}" />
+                            {{/if}}
+                            <div class="author-bio-content">
+                                <h2>{{name}}</h2>
+                                {{#if bio}}
+                        <p>{{bio}}</p>
+                    {{else}}
+                        <p>{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} published
+                   </p> {{/if}}
+                            </div>
+                        </div>
+                        <ul class="list-inline nf-author-social m-0">
+                            {{#if facebook}}
+                            <li class="list-inline-item"><a class="btn btn-primary btn-sm btn-fc text-light"
+                                    href="{{facebook_url}}"  target="_blank" rel="noopener"><i class="me-1 fab fa-facebook-f"></i>{{t "Facebook"}}</a></li>
+                            {{/if}}
+                            {{#if twitter}}
+                            <li class="list-inline-item"><a class="btn btn-success btn-sm btn-twi text-light"
+                                    href="{{twitter_url}}"  target="_blank" rel="noopener"><i class="me-1 fab fa-twitter"></i> {{t "Tweet"}}</a></li>
+                            {{/if}}
+                            {{#if website}}
+                            <li class="list-inline-item"><a class="btn btn-dark  btn-sm text-light" href="{{website}}"  target="_blank" rel="noopener"><i
+                                        class="me-1 fas fa-globe"></i>{{t "Website"}}</a></li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-md-7 col-lg-8">
+                    <div class="row">
+                        {{#get "posts" include="tags,authors,count.posts" filter="authors:{{slug}}" limit="all"}}
+                        {{#foreach posts}}
+                            <div class="col-md-12 nf-post-item">
+                                {{> "blog-style/blog-style-02"}}
+                            </div>
+                        {{/foreach}}
+                        {{/get}}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-light mb-2 w-100 loadmore-5">
+                                {{t "Load More"}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    {{> "sidebar"}}
+                </div>
+            </div>
+        </div>
+    {{/author}}
+</div>
+{{> "cta-section"}}
+{{> "footer"}}

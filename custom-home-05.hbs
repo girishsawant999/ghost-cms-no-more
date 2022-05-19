@@ -1,0 +1,26 @@
+{{!< default}} 
+{{> "headers/header-center"}}
+
+<!--/// Blog Area /// -->
+<section class="nf-home-04-section pt-3">
+   <div class="container">
+      <div class="row">
+         {{#get "posts"  limit="all" include="tags,authors,count.posts" filter="tag:-hash-faq"}}
+            {{#foreach posts }}
+               <div class="col-xl-4 col-lg-6 col-md-12 h5-post nf-post-item">
+                  {{> "blog-style/blog-style-03"}}
+               </div>
+            {{/foreach}}
+         {{/get}}
+      </div>
+      <div class="row">
+         <div class="col-md-4 mx-auto mt-1">
+            <button class="btn btn-light mb-2 w-100 loadmore-h5">
+               {{t "Load More"}}
+            </button>
+         </div>
+      </div>
+   </div>
+</section>
+
+{{> "footer"}}

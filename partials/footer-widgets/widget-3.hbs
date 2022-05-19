@@ -1,0 +1,15 @@
+{{!-- version 2.5.0 --}}
+
+<div class="footer-widget">
+    <h5 class="mb-3">{{t "Social Media"}}</h5>
+    <ul class="footer-nav list-inline">
+        {{#if @site.facebook}}
+        <li><a href="{{facebook_url}}"><span class="icon"><i class="fab fa-facebook-f"></i></span>{{t "Facebook"}}</a></li>
+        {{/if}}
+        {{#if @site.twitter}}
+        <li><a href="{{twitter_url}}"><span class="icon"><i class="fab fa-twitter"></i></span>{{t "Twitter"}}</a></li>
+        {{/if}}
+        <li><a href="https://instagram.com"><span class="icon"><i class="fab fa-instagram"></i></span>{{t "Instagram"}}</a></li>
+        <li><a href="https://linkedin.com"><span class="icon"><i class="fab fa-linkedin"></i></span>{{t "Linkedin"}}</a></li>
+    </ul>
+</div>

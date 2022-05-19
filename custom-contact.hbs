@@ -1,0 +1,88 @@
+{{!< default}} 
+{{> "header"}}
+
+{{!-- nf content section --}}
+<section class="nf-page-content-section pb-5">
+
+    {{> "nf-page-title"}}
+    
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7">
+                <div class="contact-info-block mb-3 pe-5">
+
+                    <p class="pb-2">{{t "Of often she the of from word this have generality freshlybrewed roasted on the concise plans. Back to essential about why that salutary."}}</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>{{t "New South Sales Road, Toronto, CA "}}</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i>+1 (123) 123 456</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>support@themeix.com</li>
+                    </ul>
+                </div>
+                 {{#get "posts" filter="tag:hash-faq" }}
+                    {{#if posts}}
+                        <div id="accordion-faq">
+                            {{#foreach posts}}
+                                <div class="card">
+                                    <div class="card-header  mb-1" id="heading-{{@number}}">
+                                        <button class="btn btn-link bg-light" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse{{@number}}" aria-expanded="true">
+                                            {{title}}
+                                        </button>
+                                    </div>
+
+                                    <div id="collapse{{@number}}" class="collapse show" data-bs-parent="#accordion">
+                                        <div class="card-body">
+                                            {{content}}
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/foreach}}
+                        </div>
+                    {{/if}}
+               {{/get}}
+            </div>
+            <div class="col-xl-5 col-lg-5">
+                <div class="contact-form">
+                    <h2 class="text-secondary mb-2">{{t "Send Us Message"}}</h2>
+                    <p>{{t "Please fill up the form bellow with your valuable opinion, feedback or any suggession to us. "}}</p>
+                    <form action="https://formspree.io/f/xayabwdp" method="POST" data-aos="fade-in" class="form pt-2">
+                        <div class="row">
+                            <div class="col-xl-6 mb-2">
+                                <input name="Name" class="form-control contact-input" type="text" placeholder="{{t "Your Name"}}">
+                            </div>
+                            <div class="col-xl-6 mb-2">
+                                <input class="form-control contact-input" name="Email" type="email" placeholder="{{t "Your Email"}}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6 mb-2">
+                                <input class="form-control contact-input" name="Phone" type="text" placeholder="{{t "Phone Number"}}">
+                            </div>
+                            <div class="col-xl-6 mb-2">
+                                <input class="form-control contact-input" name="Subject" type="text" placeholder="{{t "Subject"}}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-2">
+                                <textarea class="form-control contact-input" name="text" name="message"
+                                    placeholder="{{t "Write Message"}}"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="subs-btn">
+                                    <button type="submit" class="btn btn-danger bg-hover-danger text-white">{{t "Send Message"}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{!-- nf content section --}}
+
+{{> "cta-section"}}
+{{> "footer"}}

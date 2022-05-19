@@ -1,0 +1,60 @@
+         <div class="modal fade" id="headermodal" data-bs-backdrop="static">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="container">
+                     <div class="modal-body">
+                        <div class="headermodal-form">
+                           <form action="#" class="forms" id="gh-search-input" method="get" target="_top">
+                              <span>{{> "icons/search"}}</span>
+                              <input type="search" id="gh-search-text" name="q" class="form-control" placeholder="{{t "Search Here"}}">
+                           </form>
+                           <div class="search-close" data-bs-dismiss="modal">
+                              {{> "icons/cancel"}}
+                           </div>
+                        </div>
+                        <div class="pb-4" id="gh-search-results"></div>
+                        <div class="search-modal-extension">
+                           <h4 class="mb-3">{{t "Top Categories"}}</h4>
+                           <div class="search-suggestions mb-4">
+                              {{#get "tags"}}
+                              <ul class="tag-cloud list-inline">
+                                 {{#foreach tags limit="10"}}
+                                 <li class="list-inline-item"> <a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="{{url}}">{{name}}</a></li>
+                                 {{/foreach}}
+                              </ul>
+                              {{/get}}
+                           </div>
+                           <h4 class="mb-3">{{t "Picked for you"}}</h4>
+                           <div class="row">
+                              {{#get "posts" filter="featured:true" limit="3" include="authors,tags,count.posts"}}
+                              {{#if posts}}
+                              {{#foreach posts}}
+                              <div class="col-md-6 col-lg-4">
+                                 <article class="search-block">
+                                    <img class="lazyload w-100" srcset="{{img_url feature_image size=" s"}} 300w, {{img_url feature_image
+                                    size="m" }} 600w, {{img_url feature_image size="l" }} 1000w, {{img_url feature_image size="xl" }}
+                                    2000w" sizes="(max-width: 1000px) 400px, 800px" src="{{img_url feature_image size=" m"}}"
+                                    alt="{{title}}" loading="lazy" />
+                                    <div class="search-block-content">
+                                       {{#primary_tag}}                 
+                                       <div class="search-block-meta my-1">
+                                          <a href="{{url}}" class="badge bg-danger">{{name}}</a>
+                                       </div>
+                                       {{/primary_tag}}
+                                       <h6><a href="{{url}}">{{title}}</a></h6>
+                                    </div>
+                                 </article>
+                              </div>
+                              {{/foreach}} 
+                              {{/if}}
+                              {{/get}}
+                           </div>
+                        </div>
+                     </div>
+                     {{!-- Modal body --}}
+                  </div>
+                  {{!--container --}} 
+               </div>
+               {{!-- Modal content --}}
+            </div>
+         </div>

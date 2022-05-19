@@ -1,0 +1,51 @@
+{{!< default}}
+{{> "header"}}
+<!--/// Blog Area /// -->
+<div class="blog-area pb-5">
+    {{#tag}}
+    <div class="nf-page-title-area py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>{{name}}</h2>
+                    {{#if description}}
+                    <p>{{description}}</p>
+
+                    {{else}}
+<p>{{t "Total Posts"}} : {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}} </p>
+                    {{/if}}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-7 col-lg-8">
+                <div class="row">
+                    {{#get "posts" include="tags,authors,count.posts" filter="tag:{{slug}}" limit="all"}}
+                    {{#foreach posts}}
+                        <div class="col-md-12 nf-post-item">
+                            {{> "blog-style/blog-style-02"}}
+                        </div>
+                    {{/foreach}}
+                    {{/get}}
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-light mb-2 w-100 loadmore-4">
+                            {{t "Load More"}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                {{> "sidebar"}}
+            </div>
+        </div>
+    </div>
+    {{/tag}}
+</div>
+{{> "cta-section"}}
+
+{{> "footer"}}
