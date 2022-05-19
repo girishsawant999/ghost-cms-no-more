@@ -9934,6 +9934,11 @@ li article.blog-style5.d-flex.align-items-center.box-hover.rounded {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
+section.nf-page-content-section .feature-image {
+  max-height: 300px; }
+  section.nf-page-content-section .feature-image .image-frame img {
+    max-height: 300px; }
+
 @media (max-width: 800px) {
   .entry-content figure {
     margin: 0.2em 0 1.3em; }
