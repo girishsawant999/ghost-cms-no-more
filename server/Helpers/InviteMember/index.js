@@ -12,7 +12,7 @@ const inviteMember = async ({ cookie, email }) => {
         email,
         expires: null,
         status: true,
-        role_id: "61e24cb56979ca6a2d7ed25d",
+        role_id: process.env.ROLE_ID || "61e24cb56979ca6a2d7ed25d",
       },
     ],
   };
