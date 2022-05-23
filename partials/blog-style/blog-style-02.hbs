@@ -19,7 +19,7 @@
             <h4><a href="{{url}}">{{title}}</a>
             </h4>
             <p>{{excerpt}}</p>
-            
+
             <div class="row">
                 <div class="col-lg-6">
                     {{> "author-block"}}
@@ -32,10 +32,11 @@
                 </div>
             </div>
         </div>
-        <div class="comments ms-4 mx-2">
-            <a href="#" class="d-block"><i class="fa fa-2x fa-comments p-1"></i></a>
+        <div class="comments ms-2 mx-2">
+            <div class="text-center">
+                <i class="fa fa-2x fa-comments p-1"></i>
+                <span class="d-block" data-cove-count-comments="{{id}}"></span>
+            </div>
         </div>
     </div>
 </article>
-
-
