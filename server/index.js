@@ -23,7 +23,7 @@ const createSession = async () => {
 };
 
 app.get("/", (req, res) => {
-	res.send("Server is Active");
+	res.send("<h1>Server is Active</h1>");
 });
 
 app.post("/member-added", async (req, res) => {
